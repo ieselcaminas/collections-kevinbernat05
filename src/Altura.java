@@ -2,6 +2,15 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Altura {
+    public static void main(String[] args) {
+        ArrayList<Double> alturas = new ArrayList<Double>();
+
+        alturas = leerAlturas(alturas);
+        double media = calcularMedia(alturas);
+        int alumnosAlturaSuperior = calcularAlumnosAlturaSuperior(alturas);
+        int alumnosAlturaInferior = calcularAlumnosAlturaInferior(alturas);
+        mostrarResultados(alturas, alumnosAlturaInferior, alumnosAlturaSuperior, media);
+        }
     public static int numeroAlumnos() {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Introduce numero de alumnos: ");
@@ -20,18 +29,19 @@ public class Altura {
         return alturas;
 
     }
-    public static double calcularMedia(ArrayList<Double> alturas, double numeroAlumnos) {
-        double media = 0;
-        for (int i = 0; i < numeroAlumnos; i++) {
-            media += alturas.get(i);
+    public static double calcularMedia(ArrayList<Double> alturas) {
+        double suma = 0;
+        for (int i = 0; i < alturas.size(); i++) {
+            suma += alturas.get(i);
         }
-        return media / alturas.size();
+        return suma / alturas.size();
     }
     public static int calcularAlumnosAlturaSuperior(ArrayList<Double> alturas) {
         int masAltos = 0;
+        double media = calcularMedia(alturas);
 
         for (int i = 0; i < alturas.size(); i++) {
-            if (alturas.get(i) > calcularMedia(alturas, i)) {
+            if (alturas.get(i) > media) {
                 masAltos++;
             }
         }
@@ -39,8 +49,11 @@ public class Altura {
     }
     public static int calcularAlumnosAlturaInferior(ArrayList<Double> alturas) {
         int masBajos = 0;
+        double media = calcularMedia(alturas);
+
+
         for (int i = 0; i < alturas.size(); i++) {
-            if (alturas.get(i) < calcularMedia(alturas, i)) {
+            if (alturas.get(i) < media) {
                 masBajos++;
             }
         }
@@ -56,13 +69,4 @@ public class Altura {
         System.out.println("Numero alumnos con altura inferior: " + alumnosAlturaInferior);
     }
 
-    public static void main(String[] args) {
-        ArrayList<Double> alturas = new ArrayList<Double>();
-
-        alturas = leerAlturas(alturas);
-        double media = calcularMedia(alturas, alturas.size());
-        int alumnosAlturaSuperior = calcularAlumnosAlturaSuperior(alturas);
-        int alumnosAlturaInferior = calcularAlumnosAlturaInferior(alturas);
-        mostrarResultados(alturas, alumnosAlturaInferior, alumnosAlturaSuperior, media);
-    }
 }
