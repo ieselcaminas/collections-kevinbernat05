@@ -5,29 +5,29 @@ import java.util.Scanner;
 
 public class Telefonos2 {
     public static void main(String[] args) {
-        Map<String, ArrayList<Integer>> contactos = new HashMap<>();
-        ArrayList<Integer> telefonos = new ArrayList<>();
-        telefonos.add(1111);
-        telefonos.add(2222);
+        Map<String, ArrayList<String>> contactos = new HashMap<>();
+        ArrayList<String> telefonos = new ArrayList<>();
+        telefonos.add("1111");
+        telefonos.add("2222");
         contactos.put("kevin", telefonos);
 
         telefonos = new ArrayList<>();
-        telefonos.add(3333);
-        telefonos.add(4444);
+        telefonos.add("3333");
+        telefonos.add("4444");
         contactos.put("paquito", telefonos);
 
         telefonos = new ArrayList<>();
-        telefonos.add(5555);
-        telefonos.add(6666);
+        telefonos.add("5555");
+        telefonos.add("6666");
         contactos.put("ramon", telefonos);
 
         telefonos = new ArrayList<>();
-        telefonos.add(7777);
+        telefonos.add("7777");
         contactos.put("manolo", telefonos);
 
         agenda(contactos, "");
     }
-    public static void agenda(Map<String, ArrayList<Integer>> telefonos, String nombre) {
+    public static void agenda(Map<String, ArrayList<String>> telefonos, String nombre) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduzca el contacto: ");
         nombre = sc.nextLine();
