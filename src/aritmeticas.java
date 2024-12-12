@@ -8,7 +8,7 @@ public class aritmeticas {
     }
     public static void pila() {
         Stack<Integer> pila = new Stack();
-        String cadena = "8 1 1 - /";
+        String cadena = "8 1 19 -";
         String[] numeros = cadena.split(" ");
 
         if(esNumero(cadena)) {

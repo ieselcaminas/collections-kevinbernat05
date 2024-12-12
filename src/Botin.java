@@ -6,7 +6,7 @@ public class Botin {
     public static void main(String[] args) {
         Map<Integer, String> participantes = repartir(3, new String[]{"10", "20", "50", "100"});
 
-
+        System.out.println(participantes.toString());
 
     }
     public static Map<Integer, String> repartir(int numeroparticipantes, String[] billetes) {
@@ -24,9 +24,6 @@ public class Botin {
             }
             //repartos.put(repartos.getOrDefault(leTocaA, billetes[i] + " " + repartos.get(leTocaA))
         }
-
-
-
         return repartos;
     }
 }
