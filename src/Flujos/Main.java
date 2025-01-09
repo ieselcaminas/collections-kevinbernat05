@@ -18,7 +18,7 @@ public class Main {
         contarPersonas(personas);
 
         List<String> ordenadas = personas.stream()
-                .map(Person::getFirstName)
+                .map(Person -> Person.getFirstName())
                 .sorted()
                 .distinct()
                 .collect(Collectors.toList());
