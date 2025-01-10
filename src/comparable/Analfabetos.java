@@ -1,4 +1,4 @@
-package Comparable;
+package comparable;
 
 public class Analfabetos implements Comparable<Analfabetos> {
     private String pais;
