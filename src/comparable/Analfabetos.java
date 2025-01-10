@@ -30,7 +30,7 @@ public class Analfabetos implements Comparable<Analfabetos> {
     }
     @Override
     public int compareTo(Analfabetos other) {
-        return other.cantidad - this.cantidad;
+        return this.cantidad - other.cantidad;
     }
 
 

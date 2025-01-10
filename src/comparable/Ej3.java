@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Ej3 {
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader("src/Comparable/illiterate.csv"));
+        BufferedReader reader = new BufferedReader(new FileReader("src/comparable/illiterate.csv"));
         String line;
 
         List<Analfabetos> lista = new ArrayList<>();
