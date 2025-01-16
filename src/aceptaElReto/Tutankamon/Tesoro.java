@@ -4,11 +4,21 @@ public class Tesoro implements Comparable<Tesoro> {
     private String nombre;
     private int valor;
     private int peso;
+    private int orden;
 
-    public Tesoro(String nombre, int valor, int peso) {
+    public int getOrden() {
+        return orden;
+    }
+
+    public void setOrden(int orden) {
+        this.orden = orden;
+    }
+
+    public Tesoro(String nombre, int valor, int peso, int orden) {
         this.nombre = nombre;
         this.valor = valor;
         this.peso = peso;
+        this.orden = orden;
     }
 
     public String getNombre() {
@@ -40,10 +50,12 @@ public class Tesoro implements Comparable<Tesoro> {
     }
     @Override
     public int compareTo(Tesoro other) {
-        if (this.valor == other.valor) {
-            return this.peso - other.peso;
-        } else{
-            return other.valor - this.valor;
+        if (this.valor == other.valor && this.peso == other.peso) {
+            return this.orden - other.orden;
+        } else if (this.valor == other.valor) {
+            return other.peso - this.peso;
+        } else {
+            return this.valor - other.valor;
         }
     }
 
